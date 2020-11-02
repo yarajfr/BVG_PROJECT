@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+<component name="libraryTable">
+=======
+ <component name="libraryTable">
+>>>>>>> origin/main
+  <library name="BVG2021">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/BVG2021.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
