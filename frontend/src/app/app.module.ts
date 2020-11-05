@@ -7,6 +7,9 @@ import { ListeComponent } from './liste/liste.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { TasksComponent } from './tasks/tasks.component';
     ListeComponent,
     DashboardComponent,
     AboutComponent,
-    TasksComponent
+    TasksComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
