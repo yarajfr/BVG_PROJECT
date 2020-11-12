@@ -21,8 +21,6 @@ function listPersonalId(request, response) {
     );
 }
 
-
-
 module.exports = {
     listAction,
     listPersonalId,

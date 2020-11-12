@@ -26,8 +26,6 @@ app.get('/', (req, res) => res.redirect('/personalId'));
 
 app.use('/personalId', persIdRouter);
 
-
-
 app.listen(8080, () => {
     console.log('Server listening on port 8080  http://localhost:8080');
 });

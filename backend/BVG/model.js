@@ -28,7 +28,6 @@ function getPersonalId() {
     });
 }
 
-
 module.exports = {
     getAll,
     getPersonalId,
