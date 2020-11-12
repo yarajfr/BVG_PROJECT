@@ -30,8 +30,8 @@ let mysql = require('mysql');
 
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'elif',
-    password: 'elif',
+    user: 'Rehana',
+    password: 'Rehana',
     database: 'BVG_Daten'
 
 });
