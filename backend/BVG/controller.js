@@ -4,7 +4,7 @@ const model = require('./model');
 function listAction(request, response) {
     model.getAll().then(
         personen => {
-            response.send(personen); // view.personen raus gelöscht
+            response.send(personen);
         },
         error => response.send(error),
 
