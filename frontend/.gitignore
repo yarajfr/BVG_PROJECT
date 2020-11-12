@@ -70,8 +70,6 @@ bower_components/
 connect.lock/
 coverage/
 libpeerconnection.log/
-npm-debug.log
-testem.log
 typings/
 
 # e2e
@@ -196,7 +194,6 @@ hs_err_pid*
 
 ### macOS ###
 # General
-.DS_Store
 .AppleDouble
 .LSOverride
 
