@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'yara',
-    password: 'gWgTvojnDhS1ugHB',   /* hier muss Ihr Passwort hin */
+    user: 'elif',
+    password: 'elif',   /* hier muss Ihr Passwort hin */
     database: 'BVG_Daten',
 });
 

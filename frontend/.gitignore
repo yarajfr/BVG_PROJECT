@@ -40,7 +40,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-node_modules/
+
 
 # System Files
 .DS_Store
@@ -70,6 +70,7 @@ bower_components/
 connect.lock/
 coverage/
 libpeerconnection.log/
+
 typings/
 
 # e2e
@@ -194,6 +195,7 @@ hs_err_pid*
 
 ### macOS ###
 # General
+
 .AppleDouble
 .LSOverride
 

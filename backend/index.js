@@ -16,7 +16,6 @@ const express = require('express');
 const bvgRouter = require('./BVG/allRouter');
 const persIdRouter = require('./BVG/persIdRouter');
 
-
 const app = express();
 
 app.get('/', (req, res) => res.redirect('/all'));
@@ -36,8 +35,8 @@ let mysql = require('mysql');
 
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'yara',
-    password: 'gWgTvojnDhS1ugHB',
+    user: 'elif',
+    password: 'elif',
     database: 'BVG_Daten'
 
 });
