@@ -11,6 +11,19 @@ function listAction(request, response) {
     );
 }
 
+function listPersonalId(request, response) {
+    model.getPersonalId().then(
+        personen => {
+            response.send(personen); // view.personen raus gelöscht
+        },
+        error => response.send(error),
+
+    );
+}
+
+
+
 module.exports = {
     listAction,
+    listPersonalId,
 };
