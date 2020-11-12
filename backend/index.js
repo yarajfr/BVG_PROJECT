@@ -16,7 +16,6 @@ const express = require('express');
 const bvgRouter = require('./BVG/allRouter');
 const persIdRouter = require('./BVG/persIdRouter');
 
-
 const app = express();
 
 app.get('/', (req, res) => res.redirect('/all'));
