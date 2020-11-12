@@ -8,18 +8,23 @@ const server = http.createServer(function(request, response) {
 
 });
 
-
 server.listen(8080, () => {
     console.log('Server is listening to http://localhost:8080');
 });*/
 const express = require('express');
-const bvgRouter = require('./BVG/bvgrouter');
+const bvgRouter = require('./BVG/allRouter');
+const persIdRouter = require('./BVG/persIdRouter');
+
 
 const app = express();
 
-app.get('/', (req, res) => res.redirect('/bvg'));
+app.get('/', (req, res) => res.redirect('/all'));
 
-app.use('/bvg', bvgRouter);
+app.use('/all', bvgRouter);
+
+app.get('/', (req, res) => res.redirect('/personalId'));
+
+app.use('/personalId', persIdRouter);
 
 app.listen(8080, () => {
     console.log('Server listening on port 8080  http://localhost:8080');
