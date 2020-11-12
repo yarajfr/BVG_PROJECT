@@ -1,10 +1,10 @@
 const model = require('./model');
-//const view = require('./view');
+const view = require('./view');
 
 function listAction(request, response) {
     model.getAll().then(
         personen => {
-            response.send(personen); // view.personen raus gelöscht
+            response.send(view(personen));
         },
         error => response.send(error),
 
