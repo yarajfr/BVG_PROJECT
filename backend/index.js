@@ -8,6 +8,7 @@ const server = http.createServer(function(request, response) {
 
 });
 
+
 server.listen(8080, () => {
     console.log('Server is listening to http://localhost:8080');
 });*/
@@ -26,8 +27,6 @@ app.get('/', (req, res) => res.redirect('/personalId'));
 
 app.use('/personalId', persIdRouter);
 
-
-
 app.listen(8080, () => {
     console.log('Server listening on port 8080  http://localhost:8080');
 });
@@ -37,8 +36,8 @@ let mysql = require('mysql');
 
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'Rehana',
-    password: 'Rehana',
+    user: 'yara',
+    password: 'gWgTvojnDhS1ugHB',
     database: 'BVG_Daten'
 
 });

@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'Rehana',
-    password: 'Rehana',   /* hier muss Ihr Passwort hin */
+    user: 'yara',
+    password: 'gWgTvojnDhS1ugHB',   /* hier muss Ihr Passwort hin */
     database: 'BVG_Daten',
 });
 
@@ -18,6 +18,18 @@ function getAll() {
     });
 }
 
+function getPersonalId() {
+    return new Promise((resolve, reject) => {
+        const query = 'SELECT PersonalNr FROM Personaldaten';
+        connection.query(query, (error, results) => {
+            if(error) reject(error);
+            else      resolve(results);
+        })
+    });
+}
+
 module.exports = {
     getAll,
+    getPersonalId,
+
 };
