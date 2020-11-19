@@ -15,16 +15,19 @@ server.listen(8080, () => {
 const express = require('express');
 const bvgRouter = require('./BVG/allRouter');
 const persIdRouter = require('./BVG/persIdRouter');
+const busdatenRouter = require('./BVG/busdatenRouter');
+
 
 const app = express();
 
 app.get('/', (req, res) => res.redirect('/all'));
-
 app.use('/all', bvgRouter);
 
 app.get('/', (req, res) => res.redirect('/personalId'));
-
 app.use('/personalId', persIdRouter);
+
+app.get('/', (req, res) => res.redirect('/busdaten'));
+app.use('/busdaten', busdatenRouter);
 
 app.listen(8080, () => {
     console.log('Server listening on port 8080  http://localhost:8080');
