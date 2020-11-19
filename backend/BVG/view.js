@@ -1,3 +1,4 @@
+/*
 module.exports = function  render(personen) {
     return `
   <!DOCTYPE html>
@@ -26,5 +27,7 @@ module.exports = function  render(personen) {
         </table>
     </body>
   </html>
-  `
-};
+
+ `
+}; */
+
