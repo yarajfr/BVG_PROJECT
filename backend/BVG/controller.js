@@ -21,7 +21,18 @@ function listPersonalId(request, response) {
     );
 }
 
+function listBusdaten(request, response) {
+    model.getBusdaten().then(
+        personen => {
+            response.send(personen); // view.personen raus gelöscht
+        },
+        error => response.send(error),
+
+    );
+}
+
 module.exports = {
     listAction,
     listPersonalId,
+    listBusdaten
 };
