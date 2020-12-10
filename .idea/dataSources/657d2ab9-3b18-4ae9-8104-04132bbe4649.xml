@@ -933,15 +933,13 @@ SELECT|sys.sys_config:null
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="290" parent="284" name="Start_x">
+    <column id="290" parent="284" name="Start_lat">
       <Position>5</Position>
       <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="291" parent="284" name="Start_y">
+    <column id="291" parent="284" name="Start_lng">
       <Position>6</Position>
       <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="292" parent="284" name="Ziel_str">
       <Position>7</Position>
@@ -953,60 +951,70 @@ SELECT|sys.sys_config:null
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="294" parent="284" name="Ziel_x">
+    <column id="294" parent="284" name="Ziel_lat">
       <Position>9</Position>
       <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="295" parent="284" name="Ziel_y">
+    <column id="295" parent="284" name="Ziel_lng">
       <Position>10</Position>
       <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="296" parent="285" name="PersonalNr">
+    <column id="296" parent="284" name="Buslinie">
+      <Position>11</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="297" parent="284" name="Einsteige_Station">
+      <Position>12</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="298" parent="284" name="Aussteige_Station">
+      <Position>13</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="299" parent="285" name="PersonalNr">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="297" parent="285" name="Vorname">
+    <column id="300" parent="285" name="Vorname">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="298" parent="285" name="Nachname">
+    <column id="301" parent="285" name="Nachname">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="299" parent="285" name="OrgZuordnung">
+    <column id="302" parent="285" name="OrgZuordnung">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="300" parent="285" name="ZustandsNr">
+    <column id="303" parent="285" name="ZustandsNr">
       <Position>5</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>381</DefaultExpression>
     </column>
-    <column id="301" parent="285" name="Berufsgruppe">
+    <column id="304" parent="285" name="Berufsgruppe">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;Omnibusfahrer/in&apos;</DefaultExpression>
     </column>
-    <column id="302" parent="285" name="Betriebshof">
+    <column id="305" parent="285" name="Betriebshof">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;e&apos;</DefaultExpression>
     </column>
-    <index id="303" parent="285" name="PersonalNr">
+    <index id="306" parent="285" name="PersonalNr">
       <ColNames>PersonalNr</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="304" parent="285" name="PersonalNr">
+    <key id="307" parent="285" name="PersonalNr">
       <ColNames>PersonalNr</ColNames>
       <UnderlyingIndexName>PersonalNr</UnderlyingIndexName>
     </key>
