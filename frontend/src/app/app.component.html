@@ -7,17 +7,21 @@
 
 <nav >
   <div>
-      <a style="color: yellow;"  routerLink="/"><img src="assets/motiv.jpg" style="width: 160px; height: 80px;"></a>
-      <a style="float: right; color: yellow;" routerLink="/login"> <img src="../assets/login.JPG" alt="login">login</a>
+    <!--      <a style="color: yellow;"  routerLink="/"><img src="assets/motiv.jpg" style="width: 160px; height: 80px;"></a>-->
+    <a routerLink="/"><img src="../assets/BVG_Logo_Website.JPG" style="height: 80px;"></a>
+    <!--      <a style="float: right; color: yellow;" routerLink="/login"> <img src="../assets/login.JPG" alt="login">login</a>-->
+    <a style="float: right; color: yellow;" routerLink="/login">Login</a>
+    <a style="float: right; color: yellow;" routerLink="/">Home</a>
+    <a style="float: right; color: yellow;" routerLink="/list">Übersicht</a>
   </div>
 </nav>
 
 <div class="jumbotron">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 offset-sm-2">
-            <router-outlet></router-outlet>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+        <router-outlet></router-outlet>
       </div>
-      </div>
+    </div>
+  </div>
 </div>

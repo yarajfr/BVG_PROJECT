@@ -13,12 +13,16 @@ server.listen(8080, () => {
     console.log('Server is listening to http://localhost:8080');
 });*/
 const express = require('express');
+const cors = require('cors');
 const bvgRouter = require('./BVG/allRouter');
 const persIdRouter = require('./BVG/persIdRouter');
 const busdatenRouter = require('./BVG/busdatenRouter');
 
 
 const app = express();
+
+// enable cors for all requests
+app.use(cors());
 
 app.get('/', (req, res) => res.redirect('/all'));
 app.use('/all', bvgRouter);
@@ -38,8 +42,8 @@ let mysql = require('mysql');
 
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'elif',
-    password: 'elif',
+    user: 'yara',
+    password: 'gWgTvojnDhS1ugHB',
     database: 'BVG_Daten'
 
 });

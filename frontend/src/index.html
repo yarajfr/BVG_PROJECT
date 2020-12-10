@@ -11,3 +11,302 @@
   <bvg-root></bvg-root>
 </body>
 </html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <title>Frontend</title>
+
+  <style>
+    #map{
+      height:500px;
+      width:80%;
+      margin-left: 10%;
+    }
+  </style>
+</head>
+<body onload='initMap(); loadJSON(); '>
+<bvg-root></bvg-root>
+<div id="map"></div>
+<script>
+
+
+  var marker_obj;
+
+  function loadJSON(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (){
+      if (this.readyState === 4 && this.status === 200)  {
+        marker_obj = JSON.parse(this.responseText);
+        createmarker(this);
+        console.log(marker_obj);
+      }};
+    xhttp.open("GET", "http://localhost:8080/marker", true);
+    xhttp.send();
+
+  }
+
+  function createmarker()
+  {
+    console.log(marker_obj);
+
+
+  }
+
+  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  var iconBase1 = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+  function initMap() {
+
+
+
+    var map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 52.52, lng: 13.40 },
+
+      zoom: 14,
+    });
+
+
+    google.maps.event.addListener(map, 'click', function(event){
+      // Add marker
+      addMarker({coords:event.latLng});
+    });
+
+    infoWindow1 = new google.maps.InfoWindow();
+    infoWindowcurrent = new google.maps.InfoWindow();
+
+    if (navigator.geolocation){
+      navigator.geolocation.watchPosition(
+        (position) => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+
+
+          };
+
+          map.setCenter(pos);
+
+          var marker = new google.maps.Marker({
+
+            map:map,
+
+
+          });
+          infoWindowcurrent.setContent("current location");
+          marker.setPosition(pos);
+          marker.addListener('click', function(){
+            infoWindowcurrent.open(map, marker);
+          });
+        });
+    }
+    else {
+      infoWindowcurrent.setContent("Geolocation is not supported by this browser.");
+    }
+
+    // Add marker
+    var bus1 = new google.maps.Marker({
+      position:{lat:52.52,lng:13.40},
+      map:map,
+      icon: iconBase + 'bus.png'
+    });
+
+    var info1 = new google.maps.InfoWindow({
+      content:'<p>Bus NR1 </p>'
+    });
+
+    bus1.addListener('click', function(){
+      info1.open(map, bus1);
+    });
+
+    /*  var markers = [
+        {
+          coords:{lat:52.52,lng:13.40},
+          iconImage:'',
+          content:'<h1>Lynn MA</h1>'
+        },
+        {
+          coords:{lat:52.51,lng:13.41},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h1>Amesbury MA</h1>'
+        },
+        {
+          coords:{lat:52.52,lng:13.41}
+        }
+      ];
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+      // Add Marker Function
+      function addMarker(props) {
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if (props.iconImage) {
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if (props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+
+          marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+          });
+        }
+      }*/
+
+
+
+
+    infoWindow = new google.maps.InfoWindow();
+    const locationButton = document.createElement("button");
+    locationButton.textContent = "Pan to Current Location";
+    locationButton.classList.add("custom-map-control-button");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locationButton.addEventListener("click", () => {
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const pos1 = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+            infoWindow.setPosition(pos1);
+
+            infoWindow.setContent("Location found.");
+            infoWindow.open(map);
+            map.setCenter(pos1);
+            var marker1 = new google.maps.Marker({
+
+              map:map,
+              //icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            });
+            marker1.setPosition(pos1);
+          },
+          () => {
+            handleLocationError(true, infoWindow, map.getCenter());
+          }
+        );
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    });
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+
+  }
+
+
+</script>-->
+<!--<script>
+  var customLabel = {
+    restaurant: {
+      label: 'R'
+    },
+    bar: {
+      label: 'B'
+    }
+  };
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: new google.maps.LatLng(-33.863276, 151.207977),
+      zoom: 12
+    });
+    var infoWindow = new google.maps.InfoWindow;
+
+    // Change this depending on the name of your PHP or XML file
+    downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
+      var xml = data.responseXML;
+      var markers = xml.documentElement.getElementsByTagName('marker');
+      Array.prototype.forEach.call(markers, function(markerElem) {
+        var id = markerElem.getAttribute('id');
+        var name = markerElem.getAttribute('name');
+        var address = markerElem.getAttribute('address');
+        var type = markerElem.getAttribute('type');
+        var point = new google.maps.LatLng(
+          parseFloat(markerElem.getAttribute('lat')),
+          parseFloat(markerElem.getAttribute('lng')));
+
+        var infowincontent = document.createElement('div');
+        var strong = document.createElement('strong');
+        strong.textContent = name
+        infowincontent.appendChild(strong);
+        infowincontent.appendChild(document.createElement('br'));
+
+        var text = document.createElement('text');
+        text.textContent = address
+        infowincontent.appendChild(text);
+        var icon = customLabel[type] || {};
+        var marker = new google.maps.Marker({
+          map: map,
+          position: point,
+          label: icon.label
+        });
+        marker.addListener('click', function() {
+          infoWindow.setContent(infowincontent);
+          infoWindow.open(map, marker);
+        });
+      });
+    });
+  }
+
+
+
+  function downloadUrl(url, callback) {
+    var request = window.ActiveXObject ?
+      new ActiveXObject('Microsoft.XMLHTTP') :
+      new XMLHttpRequest;
+
+    request.onreadystatechange = function() {
+      if (request.readyState == 4) {
+        request.onreadystatechange = doNothing;
+        callback(request, request.status);
+      }
+    };
+
+    request.open('GET', url, true);
+    request.send(null);
+  }
+
+  function doNothing() {}
+</script>-->
+
+<!--
+<script>
+
+</script>
+<script
+  async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL9RaJxOu3qaHM5hsdgWggrOX71TpAU0Q&callback=initMap">
+
+</script>
+-->
+
+

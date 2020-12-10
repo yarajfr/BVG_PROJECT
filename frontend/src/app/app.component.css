@@ -1,6 +1,6 @@
 nav
 {
-    Background-color: black;
+  Background-color: #373632;
 }
 
 nav button{
@@ -14,3 +14,9 @@ nav div{
 #login{
   float: right;
 }
+
+a
+{
+  padding-left: 5%;
+}
+

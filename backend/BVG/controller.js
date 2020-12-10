@@ -4,9 +4,13 @@ const model = require('./model');
 function listAction(request, response) {
     model.getAll().then(
         personen => {
+            console.log(personen);
             response.send(personen);
         },
-        error => response.send(error),
+        error => {
+            console.log(error);
+            response.send(error);
+        }
 
     );
 }
