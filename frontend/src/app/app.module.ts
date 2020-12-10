@@ -16,7 +16,12 @@ import {BackendService} from "./shared/backend.service";
 import { CreateComponent } from './all/create/create.component';
 import { UpdateComponent } from './all/update/update.component';
 import { DeleteComponent } from './all/delete/delete.component';
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { PencilSquare } from 'ngx-bootstrap-icons';
 
+const icons = {
+  PencilSquare,
+};
 
 
 @NgModule({
@@ -37,7 +42,9 @@ import { DeleteComponent } from './all/delete/delete.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxBootstrapIconsModule.pick(icons)
+
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]

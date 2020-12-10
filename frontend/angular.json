@@ -12,7 +12,8 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options":  { "styles": [ "src/styles.css", "./node_modules/bootstrap/dist/css/bootstrap.min.css" ],
+            "scripts": [ "./node_modules/jquery/dist/jquery.min.js", "./node_modules/bootstrap/dist/js/bootstrap.min.js" ],
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -78,8 +79,10 @@
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
+          "options": { "styles": [ "src/styles.css", "./node_modules/bootstrap/dist/css/bootstrap.min.css" ],
+            "scripts": [ "./node_modules/jquery/dist/jquery.min.js", "./node_modules/bootstrap/dist/js/bootstrap.min.js" ],
+
+          "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
@@ -120,7 +123,7 @@
         }
       }
     }
-  },
+},
   "defaultProject": "frontend",
   "cli": {
     "analytics": "ffe0d5b4-7474-42d1-add8-02e492ba617c"
