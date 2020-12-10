@@ -18,6 +18,7 @@ import { UpdateComponent } from './all/update/update.component';
 import { DeleteComponent } from './all/delete/delete.component';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { PencilSquare } from 'ngx-bootstrap-icons';
+import { BusdatenReadComponent } from './busdaten/busdaten-read/busdaten-read.component';
 
 const icons = {
   PencilSquare,
@@ -38,6 +39,7 @@ const icons = {
     CreateComponent,
     UpdateComponent,
     DeleteComponent,
+    BusdatenReadComponent,
   ],
   imports: [
     BrowserModule,

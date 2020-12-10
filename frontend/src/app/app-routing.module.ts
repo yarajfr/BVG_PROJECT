@@ -10,6 +10,8 @@ import {ReadComponent} from "./all/read/read.component";
 import { CreateComponent } from './all/create/create.component';
 import { UpdateComponent } from './all/update/update.component';
 import { DeleteComponent } from './all/delete/delete.component';
+import { BusdatenReadComponent } from "./busdaten/busdaten-read/busdaten-read.component";
+
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -24,6 +26,9 @@ const routes: Routes = [
   { path: 'read/:id', component: ReadComponent },
   { path: 'delete', component: DeleteComponent },
   { path: 'delete/:id', component: DeleteComponent },
+  { path: 'busdaten', component: BusdatenReadComponent },
+  { path: 'busdaten/:id', component: BusdatenReadComponent },
+
 ];
 
 
