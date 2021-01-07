@@ -23,7 +23,6 @@
   <caption></caption>
   <thead>
   <tr>
-    <th>Personal Nummer</th>
     <th>Bus Nummer</th>
     <th>Start Straße</th>
     <th>Start Straßen Nummer</th>
@@ -38,7 +37,6 @@
   </thead>
   <tbody>
   <tr *ngFor="let bus of busdaten; let i=index; trackBy: trackByData">
-    <td>{{bus.PersonalNr}}</td>
     <td>{{bus.BusNr}}</td>
     <td>{{bus.Start_str}}</td>
     <td>{{bus.Start_str_nr}}</td>
@@ -47,15 +45,35 @@
     <td>{{bus.Buslinie}}</td>
     <td>{{bus.Einsteige_Station}}</td>
     <td>{{bus.Aussteige_Station}}</td>
+    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+      Prüfen
+    </button>
 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Erfolgreich hinzugefügt!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Diese Route wurde zu deiner Liste hinzugefügt!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zu meiner Liste</button>
+<!--            <button type="button" class="btn btn-primary">Save changes</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- <td><a [routerLink]="['/read/', fahrer.id]">
-       <i-bs
-         name="pencil-square"
-         class="text-secondary"
-         width="1rem"
-         height="1rem">
-       </i-bs></a></td>-->
+  <script>
+    function popup() {
+      document.getElementById("demo").innerHTML = "Hello World";
+    }
+  </script>
   </tr>
   </tbody>
 </table>
