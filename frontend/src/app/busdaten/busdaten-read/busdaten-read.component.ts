@@ -13,7 +13,6 @@ export class BusdatenReadComponent implements OnInit {
   busdaten: Busdata[];
   selectedId: number;
 
-
   constructor(private cs: BackendService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

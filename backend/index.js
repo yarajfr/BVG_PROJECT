@@ -1,59 +1,28 @@
-/*const http = require('http');
-
-const server = http.createServer(function(request, response) {
-    response.writeHead(200, { 'content-type': 'text/html; charset=utf-8'});
-    response.write('Hallo ');
-    response.end('Projekte!!\n')
-
-
-});
-
-
-server.listen(8080, () => {
-    console.log('Server is listening to http://localhost:8080');
-});*/
 const express = require('express');
 const cors = require('cors');
-const bvgRouter = require('./BVG/allRouter');
-const persIdRouter = require('./BVG/persIdRouter');
-const busdatenRouter = require('./BVG/busdatenRouter');
-
+const bodyParser = require("body-parser");
+const bvgController = require('./BVG/bvgController.js');
+const loginController = require('./Login/loginController.js');
 
 const app = express();
 
-// enable cors for all requests
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('/', (req, res) => res.redirect('/all'));
-app.use('/all', bvgRouter);
+app.get('/', (request, response) => response.redirect('/busdaten'));
 
-app.get('/', (req, res) => res.redirect('/personalId'));
-app.use('/personalId', persIdRouter);
+app.get('/all', bvgController.listAction);
+app.get('/:id', bvgController.listPersonalId);
+app.get('/bus/:nr', bvgController.listBus);
 
-app.get('/', (req, res) => res.redirect('/busdaten'));
-app.use('/busdaten', busdatenRouter);
+app.get('/user', loginController.readAction);
+app.get('/user/:id', loginController.readIdAction);
+app.post('/user/login', loginController.loginAction);
+app.post('/user/register', loginController.registerAction);
 
 app.listen(8080, () => {
     console.log('Server listening on port 8080  http://localhost:8080');
-});
-
-//MSQL Server Connection Check
-let mysql = require('mysql');
-
-let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'yara',
-    password: 'gWgTvojnDhS1ugHB',
-    database: 'BVG_Daten'
-
-});
-
-connection.connect(function(err) {
-    if (err) {
-        return console.error('error: ' + err.message);
-    }
-
-    console.log('Connected to the MySQL server.');
-
 });
 
