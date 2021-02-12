@@ -1,42 +1,17 @@
-<h1>Meine Liste</h1>
+<h1 style="padding: 29px;
+  text-align: center;
+  background: #f5e303;
+  color: black;
+  font-size: 38px;
+  font-weight: unset;
+  font-style: revert;
+  font-family: sans-serif;"
+>Meine Liste</h1>
 <p>  </p>
-
-<!--<div *ngIf="selectedId == 0" class="container">
-  <table class="table table-striped table-hover">
-    &lt;!&ndash; hier den Inhalt der Tabelle - siehe oben &ndash;&gt;
-  </table>
-</div>
-<div *ngIf="selectedId > 0" class="container">
-  <h1>{{ selectedId }}</h1>
-  <p><a [routerLink]="['/read']">Zurück zur Tabelle</a></p>
-</div>-->
-<!--
-<div>
-  <input
-    class="form-check-input"
-    type="checkbox"
-    id="checkboxNoLabel"
-    value=""
-    aria-label="..."
-  />
-</div>
-
-<div>
-  <input
-    class="form-check-input"
-    type="checkbox"
-    id="checkboxNoLabel2"
-    value=""
-    aria-label="..."
-  />
-</div>
--->
-
-
 
 <table class="table table-striped table-hover">
   <caption></caption>
-  <thead>
+  <thead style="background-color: #373632; color: white;">
   <tr>
     <th></th>
     <th>Bus Nummer</th>
@@ -53,8 +28,20 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td> <input type="checkbox"> </td>
+  <tr *ngFor="let bus of busdaten; let i=index; trackBy: trackByData">
+    <td><input type="checkbox"></td>
+    <td>{{bus.BusNr}}</td>
+    <td>{{bus.Start_str}}</td>
+    <td>{{bus.Start_str_nr}}</td>
+    <td>{{bus.Ziel_str}}</td>
+    <td>{{bus.Ziel_str_nr}}</td>
+    <td>{{bus.Buslinie}}</td>
+    <td>{{bus.Einsteige_Station}}</td>
+    <td>{{bus.Aussteige_Station}}</td>
+  </tr>
+  </tbody>
+</table>
+   <!-- <td> <input type="checkbox"> </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>
@@ -197,25 +184,45 @@
 
 
   </tbody>
-    <!--<div>
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="checkboxNoLabel"
-        value=""
-        aria-label="..."
-      />
-    </div>
-
-    <div>
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="checkboxNoLabel2"
-        value=""
-        aria-label="..."
-      />
-    </div>-->
 
 </table>
+-->
+
+ <!-- <script type="text/javascript">
+    function Werteliste (querystring) {
+      if (querystring == '') return;
+      var wertestring = querystring.slice(1);
+      var paare = wertestring.split("&");
+      let paar, name, wert;
+      for (var i = 0; i < paare.length; i++) {
+        paar = paare[i].split("=");
+        name = paar[0];
+        wert = paar[1];
+        name = unescape(name).replace("+", " ");
+        wert = unescape(wert).replace("+", " ");
+        this[name] = wert;
+      }
+    }
+    var liste = new Werteliste(location.search);
+  </script>
+</head>-->
+
+<!--
+<h1>Übergebene Daten</h1>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Feldname</th>
+    <td>Eintrag</td>
+  </tr>
+  <script type="text/javascript">
+    for (const eigenschaft in liste) {
+      document.write(
+        "<tr><td>" + eigenschaft + "</td>" +
+        "<td><code>" + liste[eigenschaft] + "</code></td></tr>"
+      );
+    }
+  </script>
+</table>&ndash;&gt;
+-->
 

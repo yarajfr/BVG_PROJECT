@@ -1,3 +1,4 @@
+<!--
 <div class = 'row m-0 w-100'>
   <div class = 'col-md-4 offset-4 mt-5' *ngIf = '!this.isLogin'>
     <h4>Login</h4>
@@ -15,11 +16,38 @@
         </div>
       </div>
       <input class= 'btn btn-outline-info' type = "submit" value = "Anmelden">
-      <!--      <a style="float: right; color: #373632;" routerLink="/">Anmelden</a>-->
+      <a style="float: right; color: #373632;" routerLink="/">Anmelden</a>&ndash;&gt;
     </form>
   </div>
   <div class = 'col-md-4 offset-4 mt-5' *ngIf = 'this.isLogin'>
     <h1>Du bist angemeldet!</h1>
-    <button class = 'btn btn-outline-info' (click) = 'logout()'>Abmelden</button>
   </div>
+</div>-->
+
+
+<div class="text-center bvglogin">
+  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <img class="mb-4" src="../../assets/yellowbvg.png" alt="BVG Logo" width="200" height="180">
+    <p></p>
+    <h1 class="h3 mb-3 font-weight-normal">Bitte zuerst einloggen</h1>
+    <label for="inputPersonalNr" class="sr-only">Personal-Nr</label>
+    <input type="input" id="inputPersonalNr" class="form-control" formControlName="personalnr" placeholder="Personal-Nr" [ngClass]="{ 'is-invalid': submitted && f.personalnr.errors }" required autofocus>
+    <div *ngIf="submitted && f.personalnr.errors" class="invalid-feedback">
+      <div *ngIf="f.personalnr.errors.required">Bitte Personal-Nr angeben!</div>
+    </div>
+    <label for="inputPassword" class="sr-only">Passwort</label>
+    <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Passwort" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.password.errors.required">Bitte Passwort angeben!</div>
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Eingaben speichern
+      </label>
+    </div>
+    <div class='form-group' style='color: #e52323;' *ngIf="submitted && (f.personalnr.errors || f.password.errors)">
+      <div>Personal-Nr und Passwort stimmen nicht überein!</div>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Einloggen</button>
+  </form>
 </div>

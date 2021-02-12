@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReadComponent } from './read.component';
 
-describe('ReadComponent', () => {
+describe('CreateComponent', () => {
   let component: ReadComponent;
   let fixture: ComponentFixture<ReadComponent>;
 
@@ -10,7 +10,7 @@ describe('ReadComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ReadComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

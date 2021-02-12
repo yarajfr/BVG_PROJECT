@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'bvg-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
@@ -20,10 +20,13 @@ export class RegisterComponent implements OnInit {
     private api: ApiService,
     private auth: AuthService,
     private router: Router
-  ) { }
+  ) {
+  }
 
   // convenience getter for easy access to form fields
-  get f(): any { return this.registerForm.controls; }
+  get f(): any {
+    return this.registerForm.controls;
+  }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -52,9 +55,25 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  isUserLogin(): void{
-    if (this.auth.getUserDetails() != null){
+  isUserLogin(): void {
+    if (this.auth.getUserDetails() != null) {
       this.isLogin = true;
     }
   }
 }
+
+/*import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'bvg-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}*/

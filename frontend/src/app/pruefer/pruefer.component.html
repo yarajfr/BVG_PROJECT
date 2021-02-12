@@ -1,0 +1,17 @@
+<div *ngIf="!isLogin">
+  <div class="alert alert-secondary mt-5 shadow-lg p-3 mb-5 bg-white rounded" role="alert">
+    Sie müssen sich zunächst einloggen, um die Ihnen zugewiesenen Busse zu sehen.
+    Hier geht es zum <a class="alert-link" [routerLink] = "['../login']" routerLinkActive = "active">Login</a>.
+    Nach dem Einloggen wählen Sie im Menü dann erneut <samp> --> Meine Prüfungen</samp>.
+  </div>
+</div>
+<div *ngIf="isLogin">
+  <h3 class="m-3">Prüfer {{ personalNr }}</h3>
+  <div id="map" class="map" (resized)="onResize($event)" >
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+      <button type="button" class="mt-3 btn-block btn-success" id="popup-button">Prüfen</button>
+    </div>
+  </div>
+</div>

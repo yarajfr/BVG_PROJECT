@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Busdata} from "../../shared/busdata";
+import {Busdata} from "../../shared/busdaten";
 import {BackendService} from "../../shared/backend.service";
 import {ActivatedRoute} from '@angular/router';
 
@@ -28,7 +28,7 @@ export class BusdatenReadComponent implements OnInit {
   trackByData(index: number, data: Busdata): number { return data.id; }
 
   readBus(): void {
-    this.cs.getBus().subscribe((response: Busdata[]) =>  {
+    this.cs.getAll().subscribe((response: Busdata[]) =>  {
         console.log(response);
         return this.busdaten = response;  },
       error => console.log(error)

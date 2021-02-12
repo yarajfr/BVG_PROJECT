@@ -36,3 +36,27 @@ exports.listBus = async function(request, response) {
         }
     );
 }
+
+exports.listBussePruefer = async function(request, response) {
+    console.log(request.params);
+    console.log(request.params.prueferNr);
+
+    model.getBussePruefer(request.params.prueferNr).then(
+        data => {
+            response.send(data);
+        },
+        error => response.send(error),
+    );
+}
+
+exports.setPrueferBus = async function(request, response) {
+    console.log(request.body);
+    console.log(request.params.prueferNr);
+
+    model.setPrueferBus(request.params.prueferNr, request).then(
+        data => {
+            response.send(data);
+        },
+        error => response.send(error),
+    );
+}

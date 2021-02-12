@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Observable} from "rxjs";
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable, Subscription} from "rxjs";
 import {Data} from "./data";
-import{ Busdata} from "./busdata";
+import{Busdaten} from "./busdaten";
+import {UserLogin} from './userlogin';
+import {UserRegister} from './userregister';
 
 
 @Injectable({
@@ -14,11 +16,19 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Data[]> {
-    return this.http.get<Data[]>(this.baseUrl+'/all');
+  getAll(): Observable<Busdaten[]>{
+    return this.http.get<Busdaten[]>(this.baseUrl + '/all');
+  }
+  login(user: UserLogin): Observable<UserRegister> {
+    return this.http.post<any>(this.baseUrl + '/user/login', user);
   }
 
-  getBus(): Observable<Busdata[]> {
-    return this.http.get<Busdata[]>(this.baseUrl+'/busdaten');
+  getBussePruefer(prueferNr: string): Observable<Busdaten[]>{
+    return this.http.get<Busdaten[]>(this.baseUrl + '/all/' + prueferNr);
   }
+
+  setPrueferBus(prueferNr: string, bus: { BusNr: number }): Observable<any>{
+    return this.http.put<any>(this.baseUrl + '/bus/' + prueferNr, bus);
+  }
+
 }

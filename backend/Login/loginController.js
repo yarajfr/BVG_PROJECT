@@ -37,7 +37,7 @@ exports.readAction = async function(request, response) {
     );
 }
 
-exports.readIdAction = async function(request, response) {
+ exports.readIdAction = async function(request, response) {
     model.readOne(request.params.id).then(
         data => {
             response.send(data);
@@ -46,4 +46,3 @@ exports.readIdAction = async function(request, response) {
 
     );
 }
-
