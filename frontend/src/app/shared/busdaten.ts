@@ -1,4 +1,4 @@
-export interface Busdata {
+export interface Busdaten {
 
   id : number;
   PersonalNr: number;

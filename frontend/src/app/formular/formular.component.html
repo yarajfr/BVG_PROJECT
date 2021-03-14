@@ -9,89 +9,110 @@
 ">Protokoll der Fahrpersonalüberprüfung</h1>
 <p></p>
 
-<form class="form-check">
-  <div class="form-row">
-  <div class="form-group col-md-7">
-    <label style="font-weight: bold" for="betriebsbereich">Betriebsbereich/Fa: </label>
-    <select class="form-control" id="betriebsbereich">
-      <option selected>Britz</option>
-      <option value="1">Lichtenberg</option>
-      <option value="2">Müllerstraße</option>
-      <option value="3">Spandau</option>
-    </select>
-  </div>
-    <div class="form-check col-md-4">
-      <label style="font-weight: bold" for="datum">Datum: </label>
-      <input type="date" class="form-control" id="Datum">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-7">
-      <label style="font-weight: bold" for="fahrer">Fahrer/in:</label>
-      <input type="text" class="form-control" class="form-control" id="fahrer" required>
-    </div>
-  <div class="form-check col-md-4">
-    <label style="font-weight: bold" for="danummer">DA-Nr.:</label>
-    <input type="text" class="form-control" id="danummer">
-  </div>
-  </div>
-  <div class="form-row">
-  <div style="font-weight: bold" class="form-check-inline">Dienstkleidung:</div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="kleidung" id="kleidungja">
-      <label class="form-check-label" for="kleidungja">Ja</label>
-    </div>
-    <div class="form-check-inline">
-      <input class="form-check-input" type="radio" name="kleidung" id="kleidungnein">
-      <label class="form-check-label" for="kleidungja">Nein</label>
-    </div>
-  <div class="form-check-inline">
-    <div class="form-check-inline">&#45;&#45;&#45;&#45;&ndash;&gt; wenn nein,Weste:</div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="kleidung" id="kleidungwesteja">
-      <label class="form-check-label" for="kleidungwesteja">Ja</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="kleidung" id="kleidungwestenein">
-      <label class="form-check-label" for="kleidungwestenein">Nein</label>
-    </div>
-  </div>
-  </div>
-  <p></p>
-  <div class="form-row">
-  <div class="form-group col-md-7">
-    <label style="font-weight: bold" for="linie">Linie</label>
-    <input type="text" class="form-control" id="linie" >
-  </div>
-  <div class="form-check col-md-4">
-    <label style="font-weight: bold" for="wagennr">Wagen-Nr:</label>
-    <input type="text" class="form-control" id="wagennr" >
-  </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-7">
-      <label style="font-weight: bold" for="zustieg">Zustieg</label>
-      <input type="text" class="form-control" id="zustieg" >
-    </div>
-    <div class="form-check col-md-4">
-      <label style="font-weight: bold" for="zuzeit">Zeit:</label>
-      <input type="time" class="form-control" id="zuzeit" >
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-7">
-        <label style="font-weight: bold" for="aussstig">Ausstieg:</label>
-        <input type="text" class="form-control" id="aussstig" >
-      </div>
-        <div class="form-check col-md-4">
-          <label style="font-weight: bold" for="auszeit">Zeit:</label>
+<form class="form-inline" class="table table-striped" style="display: flex; align-items: center; justify-content: center;">
+  <table>
+    <tr>
+      <td>
+        <label class="my-1 mr-2" for="betriebsbereich">Betriebsbereich/Fa: </label>
+        <select class="custom-select my-1 mr-sm-2" id="betriebsbereich">
+          <option selected>Britz</option>
+          <option value="1">Lichtenberg</option>
+          <option value="2">Müllerstraße</option>
+          <option value="3">Spandau</option>
+        </select>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="datum">Datum</label>
+          <input type="date" class="form-control" id="datum" >
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="fahrer">Fahrer/in:</label>
+          <input type="text" class="form-control" id="fahrer">
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="danummer">DA-Nr.:</label>
+          <input type="text" class="form-control" id="danummer">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-check-inline">Dienstkleidung:</div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="kleidung" id="kleidungja">
+          <label class="form-check-label" for="kleidungja">Ja</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="kleidung" id="kleidungnein">
+          <label class="form-check-label" for="kleidungja">Nein</label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check-inline">&#45;&#45;&#45;&#45;&ndash;&gt; wenn nein,Weste:</div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="kleidung" id="kleidungwesteja">
+          <label class="form-check-label" for="kleidungwesteja">Ja</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="kleidung" id="kleidungwestenein">
+          <label class="form-check-label" for="kleidungwestenein">Nein</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="linie">Linie</label>
+          <input type="text" class="form-control" id="linie" >
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="wagennr">Wagen-Nr:</label>
+          <input type="text" class="form-control" id="wagennr" >
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="zustieg">Zustieg</label>
+          <input type="text" class="form-control" id="zustieg" >
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="zuzeit">Zeit:</label>
+          <input type="time" class="form-control" id="zuzeit" >
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="aussstig">Ausstieg:</label>
+          <input type="text" class="form-control" id="aussstig" >
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="auszeit">Zeit:</label>
           <input type="time" class="form-control" id="auszeit" >
         </div>
-    </div>
+      </td>
+    </tr>
+  </table>
 </form>
 
-<form class="form-check-inline" class="table table-striped" >
-  <table style="width: 100%">
+<form class="form-inline" class="table table-striped" style="display: flex; align-items: center; justify-content: center;">
+  <table>
     <thead style="background-color: #373632; color: white;">
     <tr>
       <th scope="col"></th>
@@ -103,7 +124,7 @@
     <tbody>
     <tr>
       <th scope="row">A</th>
-      <td> <b>Kundendienst</b></td>
+      <td> <b>Kundensienst</b></td>
       <td></td>
       <td></td>
     </tr>
@@ -428,23 +449,23 @@
   </table>
 </form>
 
-<form class="form-check">
-  <div class="form-group">
-    <label style="font-weight: bold" for="bemerkung"><b>Bemerkungen: </b></label>
+<form>
+  <div class="form-check">
+    <label for="bemerkung"><b>Bemerkungen</b></label>
     <label for="bemerkung"> Bitte genau festhalten: Was, Wo und Wann (präzise Angaben erforderlich) positiv oder negativ war. Die Bemerkungen sind unter Angabe der auf der Vorderseite bezeichneten Kriterien zu vermerken</label>
     <label for="bemerkung">(z.B.:E24N - Rotlicht LZA Örtlichkeit - Uhrzeit) Nur bei Verwendung nach §3 BO Kraft</label>
     <textarea class="form-control" id="bemerkung" rows="5"></textarea>
   </div>
 </form>
 
-<form class="form-check">
+<form>
   <div class="form-row">
-    <div class="col">
-      <label style="font-weight: bold" for="pruefer">Überprüfung durchgeführt</label>
+    <div class="form-check">
+      <label for="pruefer">Überprüfung durchgeführt</label>
       <input type="text" class="form-control" id="pruefer" placeholder="Name">
     </div>
-    <div class="col">
-      <label style="font-weight: bold" for="danr">DA-NR.</label>
+    <div style="padding-left: 40%;"  class="form-check">
+      <label for="danr">DA-NR.</label>
       <input type="text" class="form-control" id="danr" >
     </div>
   </div>
@@ -452,3 +473,4 @@
     <button type="absenden" class="btn btn-outline-primary" >Absenden</button>
   </div>
 </form>
+

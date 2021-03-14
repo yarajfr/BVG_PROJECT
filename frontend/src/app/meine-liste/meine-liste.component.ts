@@ -3,7 +3,7 @@ import {BackendService} from "../shared/backend.service";
 import {AuthService} from "../services/auth.service";
 import {Observable} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {Busdata} from "../shared/busdaten";
+import {Busdaten} from "../shared/busdaten";
 
 @Component({
   selector: 'bvg-meine-liste',
@@ -12,7 +12,7 @@ import {Busdata} from "../shared/busdaten";
 })
 export class MeineListeComponent implements OnInit {
 
-  busdaten: Busdata[];
+  busdaten: Busdaten[];
   selectedId: number;
 
   constructor(private cs: BackendService, private route: ActivatedRoute) { }
@@ -27,10 +27,10 @@ export class MeineListeComponent implements OnInit {
     }
   }
 
-  trackByData(index: number, data: Busdata): number { return data.id; }
+  trackByData(index: number, data: Busdaten): number { return data.id; }
 
   readBus(): void {
-    this.cs.getAll().subscribe((response: Busdata[]) =>  {
+    this.cs.getAll().subscribe((response: Busdaten[]) =>  {
         console.log(response);
         return this.busdaten = response;  },
       error => console.log(error)
